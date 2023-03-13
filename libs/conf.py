@@ -8,9 +8,5 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = "59ceec65a970fa3b1a00830e53081eb6f565c272"
 db = SQLAlchemy(app)
 db.init_app(app)
+db.create_all()
 
-with app.app_context():
-    db.create_all()
-
-if __name__ == "__main__":
-    app.run(debug=True)

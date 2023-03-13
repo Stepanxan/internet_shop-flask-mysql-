@@ -1,6 +1,8 @@
 from libs.conf import *
 from flask_login import UserMixin
 
+
+
 class TblUsers (db.Model, UserMixin):
     __tablename__ = 'TblUsers'
     id = db.Column(db.Integer, nullable=False, primary_key=True, autoincrement=True)
