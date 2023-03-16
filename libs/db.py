@@ -1,6 +1,7 @@
-from libs.conf import *
+import marshmallow_sqlalchemy
 from flask_login import UserMixin
 
+from libs.conf import *
 
 
 class TblUsers (db.Model, UserMixin):
@@ -14,3 +15,8 @@ class TblUsers (db.Model, UserMixin):
 
     def __repr__(self):
         return f"<TblUsers {self.id}>"
+
+class TblUsersSchema(marshmallow_sqlalchemy.SQLAlchemyAutoSchemaSchema):
+    class Meta:
+        model = TblUsers
+
