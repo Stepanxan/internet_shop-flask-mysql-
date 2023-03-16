@@ -7,7 +7,7 @@ from libs.conf import app
 
 tbl_users_schema = TblUsersSchema()
 tbl_users_schemas = TblUsersSchema(many=True)
-
+@use_kwargs()
 @app.route('/registration', methods=['POST'])
 def registration():
         id = request.form.get('id')
